@@ -22,10 +22,9 @@ body{
   font-family: sans-serif;
   @include zero;
   // Hides close button if there is no js
-  &.noscript{
-    .close-btn{
+  &.noscript .close-btn, 
+  &.noscript .toggle-btn{
       display: none;
-    }
   }
 }
 
@@ -123,8 +122,10 @@ header {
   .close-btn{
     display: none;
   }
-  .slide-menu{
-     position: static;
-     right: auto;
-  }
+}
+
+
+body.noscript .slide-menu{
+  position: static;
+  right: auto;
 }
