@@ -22,7 +22,7 @@ body{
   font-family: sans-serif;
   @include zero;
   // Hides close button if there is no js
-  &.noscript .close-btn, 
+  &.noscript .close-btn,
   &.noscript .toggle-btn{
       display: none;
   }
@@ -39,7 +39,7 @@ header {
 }
 
 .navigation ul{
-  @include zero;
+  padding:0;
   li{
     list-style-type: none;
     a{
@@ -55,30 +55,36 @@ header {
   } // li
 } // .navigation ul
 
-.toggle-btn, 
+.toggle-btn,
 .close-btn{
   color: $text-color;
-  height: 40px;
-  width: 40px; 
-  i{
-    border: 1px solid $light-grey;
-    padding: .5em; 
-  }
+	text-decoration: none;
+	height: 40px;
+	width: 40px;
+	&:before{
+		border: 1px solid $light-grey;
+		padding: 13px 11px;
+		height: 40px;
+		width: 40px;
+		display: inline-block;
+	}
   span{
-    @include hide-text;
+    @include element-invisible ;
   }
 }
 
 .close-btn{
   margin: 1em;
 }
+
+
 /**
  * Sliding Navigation
  */
 
 // Page should move when nav opens
 // only time we will ever use max-width
-@media only screen and (max-width: 60em){ 
+@media only screen and (max-width: 60em){
   .site-wrapper{
     position: relative;
     overflow: hidden;
@@ -118,7 +124,7 @@ header {
 
 // Resets page when desktop, even if nav is toggled open
 @media only screen and (min-width: 60em) {
-  .toggle-btn, 
+  .toggle-btn,
   .close-btn{
     display: none;
   }
