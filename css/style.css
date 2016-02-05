@@ -1,143 +1,152 @@
 @-moz-viewport {
   width: device-width;
-  scale: 1; }
+  scale: 1;
+}
 
 @-ms-viewport {
   width: device-width;
-  scale: 1; }
-
-@-o-viewport {
-  width: device-width;
-  scale: 1; }
+  scale: 1;
+}
 
 @-webkit-viewport {
   width: device-width;
-  scale: 1; }
+  scale: 1;
+}
 
 @viewport {
   width: device-width;
-  scale: 1; }
+  scale: 1;
+}
 
-/* line 7, /Users/User/Desktop/exercise-3/scss/components/main */
 html {
   box-sizing: border-box;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%; }
+  text-size-adjust: 100%;
+}
 
-/* line 16, /Users/User/Desktop/exercise-3/scss/components/main */
 *, *:before, *:after {
-  box-sizing: inherit; }
+  box-sizing: inherit;
+}
 
-/* line 21, /Users/User/Desktop/exercise-3/scss/components/main */
 body {
   font-family: sans-serif;
   margin: 0;
-  padding: 0; }
-  /* line 26, /Users/User/Desktop/exercise-3/scss/components/main */
-  body.noscript .close-btn, body.noscript .toggle-btn {
-    display: none; }
+  padding: 0;
+}
 
-/* line 31, /Users/User/Desktop/exercise-3/scss/components/main */
+body.noscript .close-btn,
+body.noscript .toggle-btn {
+  display: none;
+}
+
 header {
   padding: 0 1em;
-  position: relative; }
-  /* line 34, /Users/User/Desktop/exercise-3/scss/components/main */
-  header .toggle-btn {
-    position: absolute;
-    right: 1em;
-    top: 0; }
+  position: relative;
+}
 
-/* line 41, /Users/User/Desktop/exercise-3/scss/components/main */
+.toggle-btn {
+  position: absolute;
+  right: 1em;
+  top: 0;
+}
+
 .navigation ul {
-  padding: 0; }
-  /* line 43, /Users/User/Desktop/exercise-3/scss/components/main */
-  .navigation ul li {
-    list-style-type: none; }
-    /* line 45, /Users/User/Desktop/exercise-3/scss/components/main */
-    .navigation ul li a {
-      display: block;
-      padding: 0.5em 1em;
-      text-align: center;
-      border-bottom: 1px solid #ccc;
-      text-decoration: none; }
-    /* line 52, /Users/User/Desktop/exercise-3/scss/components/main */
-    .navigation ul li:first-child a {
-      border-top: 1px solid #ccc; }
+  padding: 0;
+}
 
-/* line 59, /Users/User/Desktop/exercise-3/scss/components/main */
-.toggle-btn, .close-btn {
+.navigation li {
+  list-style-type: none;
+}
+
+.navigation li:first-child a {
+  border-top: 1px solid #ccc;
+}
+
+.navigation li a {
+  display: block;
+  text-align: center;
+  padding: .5em 1em;
+  border-bottom: 1px solid #ccc;
+  text-decoration: none;
+}
+
+.toggle-btn,
+.close-btn {
   color: #222;
   text-decoration: none;
   height: 40px;
-  width: 40px; }
-  /* line 64, /Users/User/Desktop/exercise-3/scss/components/main */
-  .toggle-btn:before, .close-btn:before {
-    border: 1px solid #ccc;
-    padding: 13px 11px;
-    height: 40px;
-    width: 40px;
-    display: inline-block; }
-  /* line 71, /Users/User/Desktop/exercise-3/scss/components/main */
-  .toggle-btn span, .close-btn span {
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px); }
+  width: 40px;
+}
 
-/* line 76, /Users/User/Desktop/exercise-3/scss/components/main */
+.toggle-btn:before,
+.close-btn:before {
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  padding: 13px 11px;
+  border: 1px solid #ccc;
+}
+
+.toggle-btn span,
+.close-btn span {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
 .close-btn {
-  margin: 1em; }
+  margin: 1em;
+}
 
 /**
  * Sliding Navigation
  */
 @media only screen and (max-width: 60em) {
-  /* line 88, /Users/User/Desktop/exercise-3/scss/components/main */
   .site-wrapper {
     position: relative;
     overflow: hidden;
     width: 100%;
-    z-index: 100; }
-    /* line 93, /Users/User/Desktop/exercise-3/scss/components/main */
-    .site-wrapper .sliding-canvas {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      -webkit-transform: translateX(0);
-          -ms-transform: translateX(0);
-              transform: translateX(0);
-      transition: all 300ms ease-in-out; }
-    /* line 101, /Users/User/Desktop/exercise-3/scss/components/main */
-    .site-wrapper[data-state='slide-open'] .sliding-canvas {
-      -webkit-transform: translateX(-100%);
-          -ms-transform: translateX(-100%);
-              transform: translateX(-100%); }
-    /* line 105, /Users/User/Desktop/exercise-3/scss/components/main */
-    .site-wrapper[data-state='slide-open'] {
-      overflow: visible; }
-
-  /* line 112, /Users/User/Desktop/exercise-3/scss/components/main */
-  .slide-menu {
+    z-index: 100;
+  }
+  .site-wrapper .sliding-canvas {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+    transition: all 300ms ease-in-out;
+  }
+  .site-wrapper[data-state="slide-open"] .sliding-canvas {
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  .site-wrapper[data-state="slide-open"] {
+    overflow: visible;
+  }
+  .navigation {
     position: absolute;
     width: 100%;
     right: -100%;
     top: 0;
     bottom: 0;
-    height: 100%;
     padding: 0;
-    min-height: 800px; }
- }
+    min-height: 800px;
+  }
+}
 
 @media only screen and (min-width: 60em) {
-  /* line 128, /Users/User/Desktop/exercise-3/scss/components/main */
-  .toggle-btn, .close-btn {
-    display: none; }
- }
+  .toggle-btn,
+  .close-btn {
+    display: none;
+  }
+}
 
-/* line 134, /Users/User/Desktop/exercise-3/scss/components/main */
-body.noscript .slide-menu {
+body.noscript .navigation {
   position: static;
-  right: auto; }
-/*# sourceMappingURL=style.css.map */
+  right: auto;
+}
